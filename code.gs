@@ -74,7 +74,8 @@ function saveToSheets(data) {
       data.year || '',
       data.department || '',
       data.college || '',
-      data.events || ''
+      data.events || '',
+      data.food || '',
     ];
 
     sheet.appendRow(row);
@@ -95,6 +96,7 @@ function sendConfirmationEmail(data) {
     const htmlBody = createEmailTemplate(participant, data);
 
     MailApp.sendEmail({
+      name: 'Symposium',
       to: data.email,
       subject: subject,
       htmlBody: htmlBody,
@@ -160,6 +162,9 @@ function createEmailTemplate(participant, data) {
           </div>
           <div style="padding: 10px; border-top: 1px solid #ccc;">
             <strong>Event(s) Registered</strong><br>${data.events || 'No events selected'}
+          </div>
+          <div style="padding: 10px; border-top: 1px solid #ccc;">
+            <strong>Food preference</strong><br>${data.food || 'No food preference selected'}
           </div>
         </div>
 
