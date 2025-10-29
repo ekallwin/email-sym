@@ -74,8 +74,7 @@ function saveToSheets(data) {
       data.year || '',
       data.department || '',
       data.college || '',
-      data.events || '',
-      'Email Sent - ' + timestamp.toLocaleString()
+      data.events || ''
     ];
 
     sheet.appendRow(row);
