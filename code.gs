@@ -95,13 +95,12 @@ function sendConfirmationEmail(data) {
     const subject = `${participant}, your registration for Symposium is confirmed!`;
     const htmlBody = createEmailTemplate(participant, data);
 
-    MailApp.sendEmail({
-      name: 'Symposium',
-      to: data.email,
-      subject: subject,
+    GmailApp.sendEmail(data.email, subject, '', {
       htmlBody: htmlBody,
+      name: 'Symposium 2k26',
       noReply: true
     });
+
 
     Logger.log('📧 Email sent to ' + data.email);
     return true;
@@ -123,7 +122,7 @@ function formatName(name) {
  */
 function createEmailTemplate(participant, data) {
   const currentYear = new Date().getFullYear();
-  
+
   return `
 <div style="margin: 0; padding: 0; background-color: #F0F0F0; font-family: 'Segoe UI', Arial, sans-serif;">
   <div style="background-color: #F0F0F0; padding: 40px 20px;">
@@ -133,7 +132,7 @@ function createEmailTemplate(participant, data) {
       <div style="height: 3px; background: linear-gradient(to right, #1491FE, #7B2FF7, #E70268);"></div>
 
       <div style="padding: 30px 20px;">
-        <h3 style="color: #333;">Dear <span style="text-transform: capitalize;">${participant}</span>,</h3>
+        <h3 style="color: #333;">Dear <span style="text-transform: capitalize;">${participant},</span></h3>
         
         <p style="font-size: 16px; color: #444;">
           Thank you for registering for the Symposium organized by the Department of Computer Science and Engineering at Ponjesly College of Engineering, Nagercoil.
