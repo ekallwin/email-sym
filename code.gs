@@ -177,7 +177,7 @@ function createEmailTemplate(participant, data) {
         <div style="margin-top: 25px;">
           <p style="font-size: 15px; color: #444;">
             Regards,<br>
-            Symposium Team<br>
+             Team Symposium 2K26<br>
           </p>
         </div>
       </div>
