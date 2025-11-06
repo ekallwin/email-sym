@@ -6,7 +6,6 @@
  * - Returns JSON response
  * 
  * Author: Allwin E K
- * College: Ponjesly College of Engineering, Nagercoil
  */
 
 // Spreadsheet configuration
@@ -102,7 +101,7 @@ function sendConfirmationEmail(data) {
     });
 
 
-    Logger.log('📧 Email sent to ' + data.email);
+    Logger.log('Email sent to ' + data.email);
     return true;
   } catch (err) {
     Logger.log('Error sending email: ' + err);
